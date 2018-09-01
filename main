@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+test -z $(type -p) || { echo bash required; exit 1; }
+set -e
+set -u
+source ${RRCONFINC}
+
+log my args $*
+env|sort

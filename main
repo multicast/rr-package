@@ -3,18 +3,11 @@ test -z $(type -p) || { echo bash required; exit 1; }
 set -e
 set -u
 
-echo in pack
-
 showhelp() {
-
   echo newhelp
   exit 1
 }
 
-
-
-
 source ${RRCONFINC}
 
 log my args $*
-env|sort

@@ -2,12 +2,13 @@
 test -z $(type -p) || { echo bash required; exit 1; }
 set -e
 set -u
-
-showhelp() {
-  echo newhelp
-  exit 1
-}
-
 source ${RRCONFINC}
 
-log my args $*
+test -x /usr/bin/apt &&
+  exec replay apt $*
+
+test -x /usr/bin/yum &&
+  exec replay yum $*
+
+log apt and yum support only. patch the package, please...
+exit 1

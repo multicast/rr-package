@@ -5,10 +5,10 @@ set -u
 source ${RRCONFINC}
 
 test -x /usr/bin/apt &&
-  exec replay apt $*
+  exec $replay apt $*
 
 test -x /usr/bin/yum &&
-  exec replay yum $*
+  exec $replay yum $*
 
 log apt and yum support only. patch the package, please...
 exit 1
